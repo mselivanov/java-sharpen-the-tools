@@ -7,34 +7,41 @@ public class JavaBasics {
     /**
      * Set of functions to demonstrate overloading.
      */
-    public void print(int i) {
+    public void print(int i, String comment) {
+        System.out.println(comment);
         System.out.println(String.format("print(int): %d", i));
     }
     
-    public void print(float f) {
+    public void print(float f, String comment) {
+        System.out.println(comment);        
         System.out.println(String.format("print(float): %f", f));
     }
     
-    public void print(boolean b) {
+    public void print(boolean b, String comment) {
+        System.out.println(comment);        
         System.out.println(String.format("print(boolean): %b", b));
     }
     
     public void demonstrateFunctionOverloadPrimitives() {
         int x = 42;
         // Call print(int) version.
-        print(x);
+        print(x, "Calling print(int) with int parameter");
         
         float f = 0.42f;
         // Call print(float) version.
-        print(f);
+        print(f, "Calling print(float) with float parameter");
         
         boolean b = false;
         // Call print(boolean) version.
-        print(b);
+        print(b, "Calling print(boolean) with boolean parameter");
         
         short s = 12;
         // Type widening from short->int. Calling print(int).
-        print(s);
+        print(s, "Calling print(int) with short parameter");
+        
+        Integer i = new Integer(120);
+        // Autounboxing. Calling print(int) with Integer parameter
+        print(i, "Autounboxing: calling print(int) with Integer parameter");        
         
     }
     
