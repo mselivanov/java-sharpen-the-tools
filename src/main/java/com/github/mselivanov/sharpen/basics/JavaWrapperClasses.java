@@ -18,13 +18,23 @@ public class JavaWrapperClasses {
     public <T extends Number> void showNumberWrapperOperations(T wrapper) {
         String wrapperName = wrapper.getClass().getSimpleName();
         out.printf("Class %s\n", wrapperName);
+        out.printf("-------- typeValue() operations --------\n");
         out.printf("%s byteValue() = %d\n", wrapperName, wrapper.byteValue());
         out.printf("%s shortValue() = %d\n", wrapperName, wrapper.shortValue());
         out.printf("%s intValue() = %d\n", wrapperName, wrapper.intValue());
         out.printf("%s longValue() = %d\n", wrapperName, wrapper.longValue());        
         out.printf("%s floatValue() = %f\n", wrapperName, wrapper.floatValue());
-        out.printf("%s doubleValue() = %f\n", wrapperName, wrapper.doubleValue());
-        
+        out.printf("%s doubleValue() = %f\n", wrapperName, wrapper.doubleValue());        
+    }
+    
+    public void showByteOperations(Byte byteObj) {
+        byte b = 12;
+        String byteStr = "40";
+        out.printf("Wrapper type: Byte.\n");
+        out.printf("Minimum value: %d\n", Byte.MIN_VALUE);
+        out.printf("Maximum value: %d\n", Byte.MAX_VALUE);
+        out.printf("Byte.valueOf(\"%s\"): %d\n", byteStr, Byte.valueOf(byteStr));
+        out.printf("Byte.parseByte(\"%s\"): %d\n", byteStr, Byte.parseByte(byteStr));
     }
     
     public void showNumberWrapperOperations() {
@@ -37,5 +47,6 @@ public class JavaWrapperClasses {
         JavaWrapperClasses jwc = new JavaWrapperClasses();
         jwc.showWrapperClasses();
         jwc.showNumberWrapperOperations();
+        jwc.showByteOperations(new Byte((byte)13));
     }
 }
