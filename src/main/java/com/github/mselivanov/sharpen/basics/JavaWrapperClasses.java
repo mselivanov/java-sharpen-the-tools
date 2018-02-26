@@ -36,7 +36,19 @@ public class JavaWrapperClasses {
         out.printf("Byte.valueOf(\"%s\"): %d\n", byteStr, Byte.valueOf(byteStr));
         out.printf("Byte.parseByte(\"%s\"): %d\n", byteStr, Byte.parseByte(byteStr));
     }
-    
+
+    public void showShortOperations(Short shortObj) {
+        short s = 13;
+        String shortStr = "42";
+        String shortStrHex = "2A";        
+        out.printf("Wrapper type: Short.\n");
+        out.printf("Minimum value: %d\n", Short.MIN_VALUE);
+        out.printf("Maximum value: %d\n", Short.MAX_VALUE);
+        out.printf("Short.valueOf(\"%s\"): %d\n", shortStr, Short.valueOf(shortStr));
+        out.printf("Short.valueOf(\"%s\", %d): %d\n", shortStrHex, 16, Short.valueOf(shortStrHex, 16));
+        out.printf("Short.parseShort(\"%s\"): %d\n", shortStr, Short.parseShort(shortStr));
+    }
+
     public void showNumberWrapperOperations() {
         byte a = 11;
         Byte b = new Byte(a);
@@ -48,5 +60,6 @@ public class JavaWrapperClasses {
         jwc.showWrapperClasses();
         jwc.showNumberWrapperOperations();
         jwc.showByteOperations(new Byte((byte)13));
+        jwc.showShortOperations(new Short((short)14));
     }
 }
