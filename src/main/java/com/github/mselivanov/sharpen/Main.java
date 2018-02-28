@@ -4,7 +4,7 @@ import com.github.mselivanov.sharpen.basics.*;
 
 public class Main {
     
-    private static final Class[] examples = {JavaStringOps.class, JavaArrayList.class};
+    private static final Class[] examples = {JavaStringOps.class, JavaArrayList.class, JavaLambdas.class};
     
     public static void main(String[] args) throws InstantiationException, IllegalAccessException {
         for(Class example: examples) {
